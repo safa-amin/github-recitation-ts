@@ -1,7 +1,8 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
+const fibonacci = require("./fib");
 
 export default (req: Request, res: Response) => {
-  const { num } = req.params as { num: string }; // Explicitly typing `num` as a string
+  const { num } = req.params;
 
   const fibN = fibonacci(parseInt(num));
   let result = `fibonacci(${num}) is ${fibN}`;
